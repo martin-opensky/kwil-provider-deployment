@@ -1,0 +1,16 @@
+{
+    "name": "kwil-provider-deployment",
+    "version": "1.0.0",
+    "type": "module",
+    "license": "MIT",
+    "scripts": {
+      "ssl": "chmod +x ./scripts/cert.sh && ./scripts/cert.sh renew_certs",
+      "up": "docker compose up",
+      "down": "docker compose down"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+    }
+  }
+  

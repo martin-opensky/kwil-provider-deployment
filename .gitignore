@@ -1,2 +1,2 @@
 certs
-config/kwil.env
+config/*.env

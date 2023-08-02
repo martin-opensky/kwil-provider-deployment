@@ -6,17 +6,27 @@ services:
       - 50055:50051
     restart: on-failure
 
+  extension-bundlr:
+    image: kwil-extension-bundlr:latest
+    ports:
+      - 50056:50052
+    env_file:
+      - ./config/bundlr-extension.env
+    restart: on-failure
+
   kwil:
     image: kwildb/kwil:latest
     ports:
       - 50051:50051
+      - 50052:50052
       - 8080:8080
     env_file:
       - ./config/kwil.env
     environment:
-      - KWILD_EXTENSION_ENDPOINTS=extension-id:50051
+      - KWILD_EXTENSION_ENDPOINTS=extension-id:50051,extension-bundlr:50052
     depends_on:
       - extension-id
+      - extension-bundlr
     restart: on-failure
 
   nginx:
