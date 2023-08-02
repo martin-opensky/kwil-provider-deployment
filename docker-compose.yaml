@@ -1,0 +1,32 @@
+version: '3'
+services:
+  extension-id:
+    image: martinopensky/kwil-extension-id:latest
+    ports:
+      - 50055:50051
+    restart: on-failure
+
+  kwil:
+    image: kwildb/kwil:latest
+    ports:
+      - 50051:50051
+      - 8080:8080
+    env_file:
+      - ./config/kwil.env
+    environment:
+      - KWILD_EXTENSION_ENDPOINTS=extension-id:50051
+    depends_on:
+      - extension-id
+    restart: on-failure
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./certs:/etc/nginx/certs
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - kwil
+    restart: on-failure
