@@ -1,17 +1,17 @@
 version: '3'
 services:
-  extension-id:
-    image: martinopensky/kwil-extension-id:latest
+  extension-unique-id:
+    image: martinopensky/kwil-extension-unique-id:latest
     ports:
       - 50055:50051
     restart: on-failure
 
-  extension-bundlr:
-    image: kwil-extension-bundlr:latest
+  extension-db-export:
+    image: martinopensky/kwil-extension-db-export:latest
     ports:
       - 50056:50052
     env_file:
-      - ./config/bundlr-extension.env
+      - ./config/extension-db-export.env
     restart: on-failure
 
   kwil:
@@ -23,10 +23,10 @@ services:
     env_file:
       - ./config/kwil.env
     environment:
-      - KWILD_EXTENSION_ENDPOINTS=extension-id:50051,extension-bundlr:50052
+      - KWILD_EXTENSION_ENDPOINTS=extension-unique-id:50051,extension-db-export:50052
     depends_on:
-      - extension-id
-      - extension-bundlr
+      - extension-unique-id
+      - extension-db-export
     restart: on-failure
 
   nginx:
@@ -40,3 +40,7 @@ services:
     depends_on:
       - kwil
     restart: on-failure
+  
+  # kwil-db-sync:
+  #   image: kwil-db-sync:latest
+  #   restart: on-failure
