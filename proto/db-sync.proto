@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message DbSync {
+    string originalDbId = 1;
+    string localProviderDbid = 2;
+    string providerAddress = 3;
+}
+
+message SyncResponse {
+    string status = 1;
+}
+
+service DbSyncService {
+    rpc Sync (DbSync) returns (SyncResponse) {}
+}
+

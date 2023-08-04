@@ -1,17 +1,27 @@
 version: '3'
 services:
   extension-unique-id:
-    image: martinopensky/kwil-extension-unique-id:latest
+    image: kwil-extension-unique-id:latest
     ports:
       - 50055:50051
     restart: on-failure
 
   extension-db-export:
-    image: martinopensky/kwil-extension-db-export:latest
+    image: kwil-extension-db-export:latest
     ports:
       - 50056:50052
     env_file:
-      - ./config/extension-db-export.env
+      - ./config/kwil.env
+    restart: on-failure
+
+  extension-db-sync:
+    image: kwil-extension-db-sync:latest
+    volumes:
+      - ./proto/db-sync.proto:/app/proto/db-sync.proto    
+    ports:
+      - 50057:50053
+    env_file:
+      - ./config/kwil.env
     restart: on-failure
 
   kwil:
@@ -19,11 +29,12 @@ services:
     ports:
       - 50051:50051
       - 50052:50052
+      - 50053:50053
       - 8080:8080
     env_file:
       - ./config/kwil.env
     environment:
-      - KWILD_EXTENSION_ENDPOINTS=extension-unique-id:50051,extension-db-export:50052
+      - KWILD_EXTENSION_ENDPOINTS=extension-unique-id:50051,extension-db-export:50052,extension-db-sync:50053
     depends_on:
       - extension-unique-id
       - extension-db-export
@@ -41,6 +52,12 @@ services:
       - kwil
     restart: on-failure
   
-  # kwil-db-sync:
-  #   image: kwil-db-sync:latest
-  #   restart: on-failure
+  kwil-db-sync:
+    image: kwil-db-sync:latest
+    ports:
+      - 50061:50061
+    volumes:
+      - ./proto/db-sync.proto:/app/proto/db-sync.proto
+    env_file:
+      - ./config/kwil.env
+    restart: on-failure
