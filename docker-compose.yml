@@ -1,13 +1,13 @@
 version: '3'
 services:
   extension-unique-id:
-    image: kwil-extension-unique-id:latest
+    image: martinopensky/kwil-extension-unique-id:latest
     ports:
       - 50055:50051
     restart: on-failure
 
   extension-db-export:
-    image: kwil-extension-db-export:latest
+    image: martinopensky/kwil-extension-db-export:latest
     ports:
       - 50056:50052
     env_file:
@@ -15,7 +15,7 @@ services:
     restart: on-failure
 
   extension-db-sync:
-    image: kwil-extension-db-sync:latest
+    image: martinopensky/kwil-extension-db-sync:latest
     volumes:
       - ./proto/db-sync.proto:/app/proto/db-sync.proto    
     ports:
