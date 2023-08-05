@@ -24,6 +24,16 @@ services:
       - ./config/kwil.env
     restart: on-failure
 
+  kwil-db-sync:
+    image: martinopensky/kwil-db-sync:latest
+    ports:
+      - 50061:50061
+    volumes:
+      - ./proto/db-sync.proto:/app/proto/db-sync.proto
+    env_file:
+      - ./config/kwil.env
+    restart: on-failure
+
   kwil:
     image: kwildb/kwil:latest
     ports:
@@ -50,14 +60,4 @@ services:
       - 443:443
     depends_on:
       - kwil
-    restart: on-failure
-  
-  kwil-db-sync:
-    image: kwil-db-sync:latest
-    ports:
-      - 50061:50061
-    volumes:
-      - ./proto/db-sync.proto:/app/proto/db-sync.proto
-    env_file:
-      - ./config/kwil.env
     restart: on-failure
