@@ -5,8 +5,8 @@
     "license": "MIT",
     "scripts": {
       "ssl": "chmod +x ./scripts/cert.sh && ./scripts/cert.sh renew_certs",
-      "up": "docker compose up",
-      "down": "docker compose down"
+      "up": "docker compose --env-file config/provider-1.env up",
+      "up:2": "docker compose -f docker-compose-2.yml --env-file config/provider-2.env up"
     },
     "dependencies": {
     },
