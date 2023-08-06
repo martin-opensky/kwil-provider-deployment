@@ -2,7 +2,7 @@ syntax = "proto3";
 
 message DbSync {
     string originalDbId = 1;
-    string localProviderDbid = 2;
+    string localProviderDbId = 2;
     string providerAddress = 3;
 }
 

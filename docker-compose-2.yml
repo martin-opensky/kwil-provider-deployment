@@ -1,9 +1,9 @@
 version: '3'
 services:
-  extension-unique-id-2:
-    image: kwil-extension-unique-id:latest
+  extension-helpers-2:
+    image: kwil-extension-helpers:latest
     ports:
-      - 50055:${EXTENSION_UNIQUE_ID_PORT}
+      - 50055:${EXTENSION_HELPERS_PORT}
     env_file:
       - ./config/${PROVIDER_ENV_FILE}
     restart: on-failure
@@ -26,8 +26,8 @@ services:
       - ./config/${PROVIDER_ENV_FILE}
     restart: on-failure
 
-  kwil-db-sync-2:
-    image: kwil-db-sync:latest
+  kwil-db-sync-server-2:
+    image: kwil-db-sync-server:latest
     ports:
       - ${DB_SYNC_GRPC_PORT}:${DB_SYNC_GRPC_PORT}
     volumes:
@@ -39,16 +39,16 @@ services:
   kwil-2:
     image: kwildb/kwil:latest
     ports:
-      - ${EXTENSION_UNIQUE_ID_PORT}:${EXTENSION_UNIQUE_ID_PORT}
+      - ${EXTENSION_HELPERS_PORT}:${EXTENSION_HELPERS_PORT}
       - ${EXTENSION_DB_EXPORT_PORT}:${EXTENSION_DB_EXPORT_PORT}
       - ${EXTENSION_DB_SYNC_PORT}:${EXTENSION_DB_SYNC_PORT}
       - ${KWIL_PROVIDER_PORT}:8080
     env_file:
       - ./config/${PROVIDER_ENV_FILE}
     environment:
-      - KWILD_EXTENSION_ENDPOINTS=extension-unique-id-2:${EXTENSION_UNIQUE_ID_PORT},extension-db-export-2:${EXTENSION_DB_EXPORT_PORT},extension-db-sync-2:${EXTENSION_DB_SYNC_PORT}
+      - KWILD_EXTENSION_ENDPOINTS=extension-helpers-2:${EXTENSION_HELPERS_PORT},extension-db-export-2:${EXTENSION_DB_EXPORT_PORT},extension-db-sync-2:${EXTENSION_DB_SYNC_PORT}
     depends_on:
-      - extension-unique-id-2
+      - extension-helpers-2
       - extension-db-export-2
       - extension-db-sync-2
     restart: on-failure
