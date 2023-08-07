@@ -36,6 +36,14 @@ services:
       - ./config/${PROVIDER_ENV_FILE}
     restart: on-failure
 
+  kwil-admin-2:
+    image: kwil-admin:latest
+    ports:
+      - ${KWIL_ADMIN_PORT}:3000
+    env_file:
+      - ./config/${PROVIDER_ENV_FILE}
+    restart: on-failure
+
   kwil-2:
     image: kwildb/kwil:latest
     ports:
