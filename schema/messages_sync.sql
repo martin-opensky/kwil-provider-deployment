@@ -1,7 +1,8 @@
-database messages_db_sync;
+database messages_sync_eg;
 
 use db_sync{
-  local_db_name: 'messages_db_sync'
+  original_dbid: 'x3f2c4402383b358218eb01e7c9030475ec276ee0782f891e79edde86',
+  local_db_name: 'messages_sync_eg'
 } as db_sync;
 
 use helpers as helper;
@@ -34,25 +35,10 @@ action insert_message ($message) public {
   SELECT $sync as id;
 }
 
-action delete_message ($id) public {
-  DELETE FROM messages
-  WHERE id = $id AND wallet = @caller;
-
-  $sync = db_sync.save_action('delete_message_sync', $id, @caller);
-
-  SELECT $sync as id;
-}
-
 action insert_message_sync ($id, $message, $original_caller, $date) private {
   INSERT INTO messages
   VALUES ($id, $message, $original_caller, $date);
 }
-
-action delete_message_sync ($id, $original_caller) private {
-  DELETE FROM messages
-  WHERE id = $id AND wallet = $original_caller;
-}
-
 
 action save_db_sync($id, $action_timestamp, $arweave_id, $provider_address, $executed_at) private {
   INSERT INTO db_sync_history VALUES ($id, $action_timestamp, $arweave_id, $provider_address, $executed_at);
