@@ -6,7 +6,10 @@ There are several repositories included as part of this project but this is the 
 ## About
 I am currently working on a Web3 project called Embrace Community and I've been looking for a reliable database that is decentralised and that easily connects to other Web3 infrastructure e.g. Arweave / Ethereum.  
 This has been my motivation with creating extensions and tools for Kwil DB during this hackathon.
+<div style="display: flex; justify-content: center;">
 <img src="https://lets.embrace.community/arweave-hack/me.png" alt="martin" style="height: 200px;" />
+</div>
+
 Martin <martin@openskydevelopment.co.uk>
 
 ## Prizes
