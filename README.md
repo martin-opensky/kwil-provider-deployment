@@ -111,10 +111,10 @@ This extension provides helpers to the actions to simplify important functions s
 
 **Repo:** https://github.com/martin-opensky/kwil-extension-helpers
 
-# helper.id()
+### helper.id()
 Without this function, an Id has to be supplied to each action that inserts data to a table.  This makes tracking unique Id's more complicated than it needs to be.  By using this method, we can be sure that the Id will be unique without having to create one prior to executing the action.
 
-# helper.date()
+### helper.date()
 This enables dates to be automatically created within the action.  It currently only supports 'now' but could easily be expanded to add support for other date strings. e.g '+ 1 day', '+ 1 week' etc
 
 Before using the helpers both id and date have to be constructed before calling the action:
