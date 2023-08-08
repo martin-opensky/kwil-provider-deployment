@@ -18,6 +18,7 @@ For the **Best use of Kwil** track I am submitting two projects: Kwil Admin UI a
 For the **Best Kwil Extension** track I am submitting 3 extensions.
 Further details about each project and their repositories is included below.
 
+# Admin Tooling
 ## Kwil Admin UI
 The Kwil Admin UI is built using Next.JS and communicates with the local Kwil Provider deployed within the Docker network.  It is a tool to be used by the Kwil DB Administrator only, which means that the account creating all databases remains fixed to the one set in the environment file.  For a full demo please see the submission video, however, some screenshots are included below.
 
@@ -79,4 +80,28 @@ The file stored on Arweave contains information about which action to run and wh
 Another server can deploy the same schema and remain in sync with the original DB by supplying the ID when registering the extension:
 <div style="display: flex; justify-content: space-between;">
 <img src="https://lets.embrace.community/arweave-hack/sync-function-2.png" style="height: 120px;" />
+</div>
+
+# Extensions
+## Full DB Schema and Data Backup
+This extension enables the Admin to run a full schema and data backup of the database to Arweave.
+
+**Repo:** https://github.com/martin-opensky/kwil-extension-db-export
+
+<div style="display: flex; justify-content: space-between;">
+<img src="https://lets.embrace.community/arweave-hack/export-ext.png" style="height: 120px;" />
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+<img src="https://lets.embrace.community/arweave-hack/export-function.png" style="height: 120px;" />
+</div>
+
+Backups can be easily tracked using the Arweave tags:
+<div style="display: flex; justify-content: space-between;">
+<img src="https://lets.embrace.community/arweave-hack/export-gql.png" style="height: 120px;" />
+</div>
+
+The full DB schema, including tables and actions are stored, along with the data for each table.
+<div style="display: flex; justify-content: space-between;">
+<img src="https://lets.embrace.community/arweave-hack/export-json.png" style="height: 300px;" />
 </div>
