@@ -7,7 +7,6 @@ use db_sync{
 
 use helpers as helper;
 
-
 table messages {
   id text maxlen(21) primary notnull,
   message text notnull maxlen(100),
@@ -40,7 +39,6 @@ action insert_message_sync ($id, $message, $original_caller, $date) private {
   INSERT INTO messages
   VALUES ($id, $message, $original_caller, $date);
 }
-
 
 action save_db_sync($id, $action_timestamp, $arweave_id, $provider_address, $executed_at) private {
   INSERT INTO db_sync_history VALUES ($id, $action_timestamp, $arweave_id, $provider_address, $executed_at);
