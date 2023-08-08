@@ -78,5 +78,5 @@ The file stored on Arweave contains information about which action to run and wh
 
 Another server can deploy the same schema and remain in sync with the original DB by supplying the ID when registering the extension:
 <div style="display: flex; justify-content: space-between;">
-<img src="https://lets.embrace.community/arweave-hack/sync-function-2.png" style="height: 200px;" />
+<img src="https://lets.embrace.community/arweave-hack/sync-function-2.png" style="height: 120px;" />
 </div>
