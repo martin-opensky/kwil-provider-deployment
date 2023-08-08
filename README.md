@@ -12,11 +12,30 @@ This has been my motivation with creating extensions and tools for Kwil DB durin
 
 Martin <martin@openskydevelopment.co.uk>
 
-## Prizes
-I am submitting code for both Kwil prizes: **Best use of Kwil** and **Best Kwil Extension**.
+## Bounties
+I am submitting code for both Kwil bounties: **Best use of Kwil** and **Best Kwil Extension**.
 For the **Best use of Kwil** track I am submitting two projects: Kwil Admin UI and Kwil DB Sync & Restore.
 For the **Best Kwil Extension** track I am submitting 3 extensions.
 Further details about each project and their repositories is included below.
+
+# Running Locally
+It's very simple to run the Kwil Providers locally.
+After cloning this repository, all you need to do is copy the provider-1.env.example to provider-1.env and enter an EVM Private key.  If you would like to run two providers like I demonstrated, repeat the process with provider-2.env.example.
+
+In order to start Kwil Provider 1 run:
+
+    yarn up
+
+In order to start Kwil Provider 2 run:
+
+    yarn up:2
+
+It will take a while the first time all docker images are downloaded.  
+
+If you would like to compile the examples demonstrated in the submission video then they are stored in the *schema* directory.
+
+**When you use the Kuneiform IDE, it's important that the account which is set as the ADMIN_PRIVATE_KEY in the ENV file is the one that deploys schemas.** 
+The Sync service and Admin UI assumes only the Admin account will create databases on the Provider.  An IDE will soon be integrated into the Kwil Admin UI, so this will happen automatically once this is completed.
 
 # Admin Tooling
 ## Kwil Admin UI
