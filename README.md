@@ -119,7 +119,7 @@ This enables dates to be automatically created within the action.  It currently 
 
 Before using the helpers both id and date have to be constructed before calling the action:
 <div style="display: flex; justify-content: space-between;">
-<img src="https://lets.embrace.community/arweave-hack/helper-before.png" style="height: 150px;" />
+<img src="https://lets.embrace.community/arweave-hack/helper-before.png" style="height: 120px;" />
 </div>
 
 With the helper methods these values are created automatically, and only the $message param needs to be provided.
