@@ -37,6 +37,8 @@ If you would like to compile the examples demonstrated in the submission video t
 **When you use the Kuneiform IDE, it's important that the account which is set as the ADMIN_PRIVATE_KEY in the ENV file is the one that deploys schemas.** 
 The Sync service and Admin UI assumes only the Admin account will create databases on the Provider.  An IDE will soon be integrated into the Kwil Admin UI, so this will happen automatically once this is completed.
 
+To access the Kwil Admin UI, open your browser and navigate to http://localhost:3000 or http://localhost:3001 for the second provider.
+
 # Admin Tooling
 ## Kwil Admin UI
 The Kwil Admin UI is built using Next.JS and communicates with the local Kwil Provider deployed within the Docker network.  It is a tool to be used by the Kwil DB Administrator only, which means that the account creating all databases remains fixed to the one set in the environment file.  For a full demo please see the submission video, however, some screenshots are included below.
