@@ -1,7 +1,7 @@
 version: '3'
 services:
   extension-helpers-2:
-    image: kwil-extension-helpers:latest
+    image: martinopensky/kwil-extension-helpers:latest
     ports:
       - 50055:${EXTENSION_HELPERS_PORT}
     env_file:
@@ -9,7 +9,7 @@ services:
     restart: on-failure
 
   extension-db-export-2:
-    image: kwil-extension-db-export:latest
+    image: martinopensky/kwil-extension-db-export:latest
     ports:
       - 50056:${EXTENSION_DB_EXPORT_PORT}
     env_file:
@@ -17,7 +17,7 @@ services:
     restart: on-failure
 
   extension-db-sync-2:
-    image: kwil-extension-db-sync:latest
+    image: martinopensky/kwil-extension-db-sync:latest
     volumes:
       - ./proto/db-sync.proto:/app/proto/db-sync.proto    
     ports:
@@ -27,7 +27,7 @@ services:
     restart: on-failure
 
   kwil-db-sync-server-2:
-    image: kwil-db-sync-server:latest
+    image: martinopensky/kwil-db-sync-server:latest
     ports:
       - ${DB_SYNC_GRPC_PORT}:${DB_SYNC_GRPC_PORT}
     volumes:
@@ -37,7 +37,7 @@ services:
     restart: on-failure
 
   kwil-admin-2:
-    image: kwil-admin:latest
+    image: martinopensky/kwil-admin:latest
     ports:
       - ${KWIL_ADMIN_PORT}:3000
     env_file:
