@@ -29,7 +29,7 @@ The Kwil Provider alias *(Provider 1)*, URL and address are loaded from the info
 
 When a DB is selected then all the tables and actions are loaded onto the UI.  The Admin user, can navigate between all the tables in the schema.
 <div style="display: flex; justify-content: center;">
-<img src="https://lets.embrace.community/arweave-hack/kwil-admin.png" style="height: 400px;" />
+<img src="https://lets.embrace.community/arweave-hack/kwil-admin.png" style="height: 350px;" />
 </div>
 
 All actions are listed on the right side of the UI, and once clicked an action modal will display allowing the input variables to be entered.
@@ -38,7 +38,7 @@ All actions are listed on the right side of the UI, and once clicked an action m
 <img src="https://lets.embrace.community/arweave-hack/kwil-action-list.png" style="height: 200px;" />
 </div>
 <div style="display: flex; justify-content: space-between;">
-<img src="https://lets.embrace.community/arweave-hack/kwil-action.png" style="height: 400px;" />
+<img src="https://lets.embrace.community/arweave-hack/kwil-action.png" style="height: 350px;" />
 </div>
 
 
