@@ -24,21 +24,21 @@ The Kwil Admin UI is built using Next.JS and communicates with the local Kwil Se
 
 The Kwil Provider alias *(Provider 1)*, URL and address are loaded from the information set in the ENV file.  Then all databases on the Provider for the Admin account are loaded.
 <div style="display: flex; justify-content: center;">
-<img src="https://lets.embrace.community/arweave-hack/kwil-provider.png" style="height: 300px;" />
+<img src="https://lets.embrace.community/arweave-hack/kwil-provider.png" style="height: 400px;" />
 </div>
 
 When a DB is selected then all the tables and actions are loaded onto the UI.  The Admin user, can navigate between all the tables in the schema.
 <div style="display: flex; justify-content: center;">
-<img src="https://lets.embrace.community/arweave-hack/kwil-admin.png" style="height: 300px;" />
+<img src="https://lets.embrace.community/arweave-hack/kwil-admin.png" style="height: 400px;" />
 </div>
 
 All actions are listed on the right side of the UI, and once clicked an action modal will display allowing the input variables to be entered.
 
 <div style="display: flex; justify-content: space-between;">
-<img src="https://lets.embrace.community/arweave-hack/kwil-action-list.png" style="height: 300px;" />
+<img src="https://lets.embrace.community/arweave-hack/kwil-action-list.png" style="height: 200px;" />
 </div>
 <div style="display: flex; justify-content: space-between;">
-<img src="https://lets.embrace.community/arweave-hack/kwil-action.png" style="height: 200px;" />
+<img src="https://lets.embrace.community/arweave-hack/kwil-action.png" style="height: 400px;" />
 </div>
 
 
@@ -46,4 +46,6 @@ All actions are listed on the right side of the UI, and once clicked an action m
 This tool includes 2 repositories: one is for an extension and the other is for a gRPC server that runs as a container alongside the sync extension.  This tool saves database actions to Arweave (through Bundlr) along with specific tags enabling each action to be easily traced and synced to other Kwil Providers running the service.
 **Extension repo**: https://github.com/martin-opensky/kwil-extension-db-sync
 **gRPC Server**: https://github.com/martin-opensky/kwil-db-sync-server
+
+
 
