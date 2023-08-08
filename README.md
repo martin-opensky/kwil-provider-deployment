@@ -62,7 +62,7 @@ Once the initial actions have been restored, the Sync Server will continue to li
 
 Each action that is synced must have a private equivalent so that the data can be restored by the DB Owner / Admin only.  This is as certain information such as @caller, $date, $id etc could not be replayed successfully at another time by different account.
 <div style="display: flex; justify-content: space-between;">
-<img src="https://lets.embrace.community/arweave-hack/sync-function-owner.png" style="height: 200px;" />
+<img src="https://lets.embrace.community/arweave-hack/sync-function-owner.png" style="height: 100px;" />
 </div>
 
 Once the save_action method is called on the extension the data is saved to Arweave and can be found through the Bundlr GQL API.
