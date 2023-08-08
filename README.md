@@ -38,7 +38,7 @@ All actions are listed on the right side of the UI, and once clicked an action m
 <img src="https://lets.embrace.community/arweave-hack/kwil-action-list.png" style="height: 200px;" />
 </div>
 <div style="display: flex; justify-content: space-between;">
-<img src="https://lets.embrace.community/arweave-hack/kwil-action.png" style="height: 350px;" />
+<img src="https://lets.embrace.community/arweave-hack/kwil-action.png" style="height: 300px;" />
 </div>
 
 
